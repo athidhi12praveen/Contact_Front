@@ -1,0 +1,33 @@
+a{
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+label {
+    display: block;
+    font:
+      1rem;
+  }
+  
+  input,
+  label {
+    margin: 0.4rem 0;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background-repeat:  no-repeat;
+    width: 25px;
+    height: 25px;
+    border-width: thin;
+}
+  

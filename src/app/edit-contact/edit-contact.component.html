@@ -1,0 +1,203 @@
+<app-header></app-header>
+
+<div class="container  mt-5 mb-5 pt-5 pb-5">
+  <div class="d-flex border border-light">
+    <div class="dashbord w-100">
+      <!-- add details form -->
+      <div class="user-details shadow border rounded p-3">
+        <div class="ms-3 me-3 mb-3 mt-1 text-center">
+          <h1><b>EDIT CONTACT</b></h1>
+        </div>
+  
+        <form #createuserform="ngForm">
+          <div class="justify-content-center text-center align-items-center">
+               
+            <img [src]="user.photo" #photo="ngModel" [(ngModel)]="user.photo"
+            name="photo" alt="no image" style="height: 80px; width: 80px; border-radius: 50%;" class="mb-3">
+          </div>
+  
+          <!-- validation mobile div -->
+          <div
+            *ngIf="photo.invalid && photo.touched"
+            class="ms-3 mb-3 mt-3 text-danger"
+          >
+            No image ...!
+          </div>
+  
+  
+          <div class="form-floating mb-3 ms-3 me-3">
+            <input
+              type="id"
+              #id="ngModel"
+              [(ngModel)]="user.id"
+              name="id"
+              class="form-control"
+              id="floatingInputPhone"
+              placeholder="ID"
+              pattern="[0-9]*"
+              required
+            />
+            <label for="floatingInputId"
+              ><i class="fa-solid fa-hashtag me-4"></i>Id</label
+            >
+          </div>
+  
+          <!-- validation mobile div -->
+          <div
+            *ngIf="id.invalid && id.touched"
+            class="ms-3 mb-3 mt-3 text-danger"
+          >
+            Invalid Phone Number ...!
+          </div>
+  
+          <div
+            class="form-floating mb-3 ms-3 me-3 d-flex justify-content-between"
+          >
+            <input
+              type="text"
+              #name="ngModel"
+              [(ngModel)]="user.name"
+              name="name"
+              class="form-control"
+              id="floatingInputName"
+              placeholder="Name"
+              pattern="[a-z A-Z ]*"
+              required
+            />
+            <label for="floatingInputName"
+              ><i class="fa-solid fa-user me-4"></i>Name
+            </label>
+          </div>
+  
+          <!-- validation name div -->
+          <div
+            *ngIf="name.invalid && name.touched"
+            class="ms-3 mb-3 mt-3 text-danger"
+          >
+            Invalid Name ...!
+          </div>
+  
+          <div class="form-floating mb-3 ms-3 me-3">
+            <input
+              type="tel"
+              #mobile="ngModel"
+              [(ngModel)]="user.mobile"
+              name="phone"
+              class="form-control"
+              id="floatingInputPhone"
+              placeholder="Enter phone number"
+              pattern="[0-9]*"
+              required
+            />
+            <label for="floatingInputPhone"
+              ><i class="fa-solid fa-phone me-4"></i>Phone</label
+            >
+          </div>
+  
+          <!-- validation mobile div -->
+          <div
+            *ngIf="mobile.invalid && mobile.touched"
+            class="ms-3 mb-3 mt-3 text-danger"
+          >
+            Invalid Phone Number ...!
+          </div>
+  
+          <div class="form-floating mb-3 ms-3 me-3">
+            <input
+              type="email"
+              #email="ngModel"
+              [(ngModel)]="user.email"
+              name="email"
+              class="form-control"
+              id="floatingInputEmail"
+              placeholder="Email"
+              email
+              required
+            />
+            <label for="floatingInputEmail"
+              ><i class="fa-solid fa-envelope me-4"></i>Email</label
+            >
+          </div>
+          <!-- validation mail div -->
+          <div
+            *ngIf="email.invalid && email.touched"
+            class="ms-3 mb-3 mt-3 text-danger"
+          >
+            Invalid Email Id ...!
+          </div>
+  
+          <div class="form-floating mb-3 ms-3 me-3">
+            <input
+              type="text"
+              #company="ngModel"
+              [(ngModel)]="user.company"
+              name="company"
+              class="form-control"
+              id="floatingInputCompany"
+              placeholder="company"
+              pattern="[a-z A-Z ]*"
+              company
+              required
+            />
+            <label for="floatingInputUrl"
+              ><i class="fa-solid fa-building me-4"></i>Company</label
+            >
+          </div>
+  
+          <!-- validation company div -->
+          <div
+            *ngIf="company.invalid && company.touched"
+            class="ms-3 mb-3 mt-3 text-danger"
+          >
+            Invalid Company ...!
+          </div>
+  
+          <div class="form-floating mb-3 ms-3 me-3">
+            <input
+              type="text"
+              #title="ngModel"
+              [(ngModel)]="user.title"
+              name="designation"
+              class="form-control"
+              id="floatingInputdesignation"
+              placeholder="Designation"
+              pattern="[a-z A-Z ]*"
+              designation
+              required
+            />
+            <label for="floatingInputUrl"
+              ><i class="fa-solid fa-book me-4"></i>Designation</label
+            >
+          </div>
+  
+          <!-- validation designation div -->
+          <div
+            *ngIf="title.invalid && title.touched"
+            class="ms-3 mb-3 mt-3 text-danger"
+          >
+            Invalid Designation ...!
+          </div>
+  
+          <div class="form-floating mb-3 ms-3 me-3">
+            <button
+              (click)="cancel(user.id)"
+              class="btn btn-danger w-100 mb-3"
+              style="height: 50px"
+            >
+              <b>CANCEL</b>
+            </button>
+            <button
+              (click)="update()"
+              class="btn btn-primary w-100"
+              style="height: 50px"
+            >
+              <b>UPDATE</b>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div></div>
+    </div>
+  </div>
+  
+</div>
