@@ -1,7 +1,9 @@
 <app-header></app-header>
 
-<div class="d-flex border border-light mb-5">
-  <div class="dashbord p-3 w-100 ms-4 me-4">
+<div class="container">
+
+  <div class="mt-5 ">
+
     <div class="title d-flex justify-content-between">
       <h1></h1>
       <button class="btn btn-outline-primary ps-4 pe-4" routerLink="/create">
@@ -19,31 +21,22 @@
       />
     </div>
 
-    <div class="container">
-      <div class="  "  >
-        
-           <div class="table border pt-2 pb-3">
-              <tr
-                *ngFor="let user of user | search : searchkey : 'name'"
-                class="d-flex justify-content-between mt-3 " >
-              <td>
-                <img [src]="user.photo" alt="no image" style="height: 100px; width: 100px; margin-left: 20px;" class="me-5">
-                  
-              </td>
-              <td class="mt-4">
-                {{ user.name }}
-                 
-              </td>
-              
-                <i
-                  class="text-secondary fa-solid fa-circle-info mt-3 me-3"
-                  routerLink="/view/{{ user.id }}"
-                  style="cursor: pointer"
-                ></i>
-         
-        </tr>
-           </div>
+    <div class="content mt-5 mb-5 pb-5">
+      <div class="row">
+        <div *ngFor="let user of user | search : searchkey : 'name'" class="col-md-6 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <a routerLink="/view/{{user.id}}" class="text-decoration-none text-dark">
+                <div class="pro-name d-flex">
+                  <img [src]="user.photo" alt="no image" style="height: 70px; width: 68px; border-radius: 50%;">
+                  <h5 class="card-title" style="padding-left: 20px; padding-top: 20px;">{{user.name}}</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-      
   </div>
+
 </div>

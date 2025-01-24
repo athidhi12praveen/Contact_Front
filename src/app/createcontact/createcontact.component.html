@@ -1,15 +1,11 @@
 <app-header></app-header>
 
-<div class="container mt-5 pt-5 mb-5 pb-5">
   <div class="d-flex border border-light">
     <div class="dashbord w-100">
       <!-- add details form -->
       <div class="user-details shadow border rounded p-3">
         <div class="d-flex justify-content-between ms-3 me-3 mb-5 mt-3">
-          <button
-            (click)="cancel()"
-            class="fa-solid fa-xmark cursor-poiner fs-1"
-          ></button>
+          
           <h1><b>CREATE NEW CONTACT</b></h1>
           <button
             (click)="createuserData()"
@@ -190,9 +186,19 @@
             Invalid Designation ...!
           </div>
         </form>
+        <div class="mb-5  ms-3 me-3">
+          <button
+              (click)="cancel()"
+              class="btn  border-radius-4 text-light"
+              style="width: 100%;  background-color: brown ; height: 50px; "
+            >
+              <b>CANCEL</b>
+            </button>
+        </div>
+        
       </div>
+      
       <div></div>
     </div>
   </div>
   
-</div>
